@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rattlesnake Aversion Training | Lindungi Anjing Anda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-yellow: #FFD233;
+            --primary-blue: #4AB9E2;
+            --primary-orange: #FF8A58;
+            --dark: #1A1A1A;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .grid-pattern {
+            background-size: 40px 40px;
+            background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+        }
+
+        .arch-bg {
+            border-top-left-radius: 1000px;
+            border-top-right-radius: 1000px;
+        }
+
+        .pill-btn {
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+
+        .bento-card {
+            border-radius: 32px;
+            transition: transform 0.3s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden text-gray-900">
+
+    <!-- Navigasi -->
+    <nav class="py-6 px-10 flex justify-between items-center bg-white sticky top-0 z-50">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M10 5.172a2 2 0 0 0-2.828 0L3.828 8.515a2 2 0 0 0 0 2.828L8 15.515a2 2 0 0 0 2.828 0l3.344-3.344a2 2 0 0 0 0-2.828L10 5.172Z" />
+                    <path
+                        d="M14 5.172a2 2 0 0 1 2.828 0l4.172 4.172a2 2 0 0 1 0 2.828L16 17.172a2 2 0 0 1-2.828 0l-1.172-1.172" />
+                </svg>
+            </div>
+            <span class="font-display text-2xl font-bold tracking-tight">DOGSAFE</span>
+        </div>
+        <div class="hidden md:flex gap-8 font-semibold text-sm uppercase tracking-wider">
+            <a href="#facts" class="hover:text-blue-500">Fakta</a>
+            <a href="#reality" class="hover:text-blue-500">Biaya Vet</a>
+            <a href="#regret" class="hover:text-blue-500">Mengapa Kami</a>
+        </div>
+        <button
+            class="border-2 border-dark px-6 py-2 pill-btn font-bold hover:bg-dark hover:text-white transition-colors">
+            Daftar Sekarang
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center pt-10 grid-pattern">
+        <div class="container mx-auto px-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="z-10">
+                <h1 class="text-6xl md:text-8xl font-bold leading-[0.9] mb-8 uppercase">
+                    Is your dog's <br> life worth <br> <span class="text-orange-500">$135.00?</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 max-w-lg">
+                    Jangan biarkan petualangan di alam bebas berubah menjadi tragedi pukul 2 pagi. Lindungi mereka
+                    sebelum terlambat.
+                </p>
+                <div class="flex gap-4">
+                    <button
+                        class="bg-[#FFD233] text-dark px-10 py-5 rounded-2xl font-display text-xl font-bold shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                        Amankan Slot Anda 🐾
+                    </button>
+                </div>
+            </div>
+            <div class="relative flex justify-center lg:justify-end">
+                <!-- Arch shape from image reference -->
+                <div class="w-[300px] md:w-[450px] h-[400px] md:h-[600px] bg-blue-400 arch-bg relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80"
+                        alt="Happy Dog" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] max-w-none">
+                </div>
+                <!-- Floating Badge -->
+                <div
+                    class="absolute top-10 right-0 md:right-10 bg-white p-4 rounded-2xl shadow-xl transform rotate-12 border-2 border-dark max-w-[150px] text-center">
+                    <p class="font-display font-bold text-sm">PELATIHAN TERBAIK 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Ticker -->
+    <div class="bg-yellow-400 border-y-2 border-dark py-4 flex overflow-hidden select-none">
+        <div class="flex space-x-12 animate-marquee whitespace-nowrap font-display font-bold text-xl uppercase italic">
+            <span>Urgensi Tinggi • Rattlesnake Season is Here • Protect Your Best Friend • Only $135 • Limited Slots •
+                May-June Peak •</span>
+            <span>Urgensi Tinggi • Rattlesnake Season is Here • Protect Your Best Friend • Only $135 • Limited Slots •
+                May-June Peak •</span>
+        </div>
+    </div>
+
+    <!-- Stats Section (Grid Bento) -->
+    <section id="facts" class="py-24 bg-white">
+        <div class="container mx-auto px-10">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-5xl font-bold uppercase mb-4">Rattlesnake Bite <br> <span class="text-blue-500">The
+                            Hard Facts</span></h2>
+                    <p class="text-gray-500 max-w-md">Kenyataan pahit yang perlu diketahui setiap pemilik anjing di
+                        Amerika Serikat.</p>
+                </div>
+                <div class="hidden md:block">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="50" r="48" stroke="black" stroke-width="2" stroke-dasharray="8 8" />
+                        <path d="M30 50L70 50M70 50L60 40M70 50L60 60" stroke="black" stroke-width="2" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="md:col-span-2 bento-card bg-orange-100 p-10 border-2 border-dark">
+                    <span class="text-4xl mb-4 block">⚠️</span>
+                    <h3 class="text-2xl font-bold mb-4 uppercase">7,000–8,000 Dogs</h3>
+                    <p class="text-lg opacity-80">Digigit oleh ular derik di AS setiap tahunnya. Ini bukan angka yang
+                        kecil.</p>
+                </div>
+                <div class="bento-card bg-blue-100 p-10 border-2 border-dark">
+                    <h3 class="text-4xl font-bold mb-2">3-4x</h3>
+                    <p class="font-semibold uppercase text-sm text-blue-600 mb-4">Risk Level</p>
+                    <p>Anjing lebih berisiko digigit daripada manusia.</p>
+                </div>
+                <div class="bento-card bg-yellow-100 p-10 border-2 border-dark">
+                    <h3 class="text-2xl font-bold mb-4 uppercase">Peak Season</h3>
+                    <p class="text-lg">Mei – Juni adalah puncak bahaya. Jangan menunggu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vet Bill Section -->
+    <section id="reality" class="py-24 bg-gray-50 grid-pattern">
+        <div class="container mx-auto px-10">
+            <div class="bg-white bento-card border-2 border-dark overflow-hidden grid lg:grid-cols-2">
+                <div class="p-12">
+                    <h2 class="text-4xl font-bold mb-8 uppercase">Vet Bill Reality</h2>
+                    <div class="space-y-6">
+                        <div
+                            class="flex justify-between items-center p-6 bg-gray-100 rounded-2xl border-2 border-transparent hover:border-orange-400 transition-all">
+                            <span class="font-bold text-xl uppercase">Average Treatment</span>
+                            <span class="text-2xl font-display text-orange-600">$3,000–$7,000</span>
+                        </div>
+                        <div
+                            class="flex justify-between items-center p-6 bg-gray-100 rounded-2xl border-2 border-transparent hover:border-red-400 transition-all">
+                            <span class="font-bold text-xl uppercase">Severe Cases</span>
+                            <span class="text-2xl font-display text-red-600">$10,000+</span>
+                        </div>
+                        <div class="p-4 italic text-gray-500 text-sm">
+                            *Satu vial antivenom saja berbiaya $400–$800. Banyak anjing butuh lebih dari satu.
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-dark text-white p-12 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold mb-8 text-yellow-400 italic font-display">THE HARD QUESTION</h3>
+                    <ul class="space-y-6 text-xl">
+                        <li class="flex gap-4">
+                            <span class="text-yellow-400 font-bold">01.</span>
+                            <p>Apakah $135 sebanding dengan nyawa anjing Anda?</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-yellow-400 font-bold">02.</span>
+                            <p>Apakah $135 sebanding dengan menghindari tagihan $7,000?</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-yellow-400 font-bold">03.</span>
+                            <p>Apakah Anda sanggup memutuskan "harga" nyawa anjing Anda pada jam 2 pagi?</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regret Section (Testimonial Style) -->
+    <section id="regret" class="py-24 bg-white">
+        <div class="container mx-auto px-10">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold uppercase mb-4">Kenapa Pemilik <span
+                        class="text-orange-500 italic">Menyesal?</span></h2>
+                <p class="text-gray-500">Belajarlah dari kesalahan orang lain sebelum itu menjadi kesalahan Anda.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-10 rounded-[40px] border-2 border-dark bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                    <div class="text-5xl mb-6">“</div>
+                    <p class="text-xl font-medium italic mb-6">"Saya tidak menyangka ini akan terjadi pada anjing saya.
+                        Kami selalu lewat sini setiap hari."</p>
+                    <p class="font-display font-bold uppercase">— Penyesalan No. 1</p>
+                </div>
+                <div
+                    class="p-10 rounded-[40px] border-2 border-dark bg-yellow-400 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                    <div class="text-5xl mb-6">“</div>
+                    <p class="text-xl font-medium italic mb-6">"Kami mendaki di sini sepanjang waktu. Saya pikir dia
+                        tahu cara menghindarinya."</p>
+                    <p class="font-display font-bold uppercase">— Penyesalan No. 2</p>
+                </div>
+                <div class="p-10 rounded-[40px] border-2 border-dark bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                    <div class="text-5xl mb-6">“</div>
+                    <p class="text-xl font-medium italic mb-6">"Saya berencana mendaftar bulan depan. Ternyata itu sudah
+                        terlambat."</p>
+                    <p class="font-display font-bold uppercase">— Penyesalan No. 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-24 grid-pattern">
+        <div class="container mx-auto px-10">
+            <div
+                class="bg-blue-400 rounded-[50px] p-12 md:p-20 text-center border-2 border-dark relative overflow-hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+                <h2 class="text-4xl md:text-7xl font-bold text-dark mb-8 uppercase leading-tight">
+                    By the time you need this, <br> <span class="text-white italic">it’s already too late.</span>
+                </h2>
+                <p class="text-xl mb-12 text-dark font-medium max-w-2xl mx-auto">
+                    Daftar sekarang untuk sesi latihan terdekat. Slot sangat terbatas.
+                </p>
+                <div class="bg-white p-4 inline-block rounded-3xl border-2 border-dark mb-8">
+                    <span class="font-display font-bold text-3xl">$135.00</span>
+                    <span class="text-gray-500 line-through ml-2 text-xl">$250.00</span>
+                </div>
+                <br>
+                <button
+                    class="bg-dark text-white px-12 py-6 rounded-2xl font-display text-2xl font-bold hover:bg-white hover:text-dark transition-all uppercase tracking-tighter">
+                    Lindungi Anjing Saya Sekarang
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-20 pb-10">
+        <div class="container mx-auto px-10">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-yellow-400 rounded flex items-center justify-center text-dark">🐾</div>
+                        <span class="font-display text-2xl font-bold tracking-tight">DOGSAFE</span>
+                    </div>
+                    <p class="text-gray-400 max-w-sm">
+                        Pelatihan khusus untuk menjaga sahabat terbaik Anda tetap aman dari bahaya alam liar.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 uppercase tracking-widest text-yellow-400 text-sm">Links</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white">Lokasi Pelatihan</a></li>
+                        <li><a href="#" class="hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 uppercase tracking-widest text-yellow-400 text-sm">Hubungi Kami</h4>
+                    <p class="text-gray-400 mb-2">info@dogsafe.com</p>
+                    <p class="text-gray-400">+1-202-555-0137</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-10 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 DOGSAFE Aversion Training. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
+        }
+    </style>
+</body>
+
+</html>
