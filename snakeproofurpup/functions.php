@@ -5,6 +5,16 @@ if (!defined('ABSPATH')) {
 }
 
 /**
+ * Theme Setup
+ */
+function snakeproof_setup()
+{
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'snakeproof_setup');
+
+/**
  * Enqueue scripts and styles.
  */
 function snakeproof_scripts()
@@ -16,7 +26,7 @@ function snakeproof_scripts()
     wp_enqueue_style('aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '2.3.1');
 
     // Main Style
-    wp_enqueue_style('snakeproof-style', get_stylesheet_uri(), array(), '1.0.3');
+    wp_enqueue_style('snakeproof-style', get_stylesheet_uri(), array(), '1.0.4');
 
     // Tailwind
     wp_enqueue_script('tailwindcss', 'https://cdn.tailwindcss.com', array(), null, false);
@@ -30,10 +40,11 @@ function snakeproof_scripts()
 add_action('wp_enqueue_scripts', 'snakeproof_scripts');
 
 /**
- * Kirki Customizer Configuration - loaded on init
+ * Kirki Customizer Configuration
  */
 function snakeproof_kirki_config()
 {
+    // Only run if Kirki is available
     if (!class_exists('Kirki')) {
         return;
     }
@@ -43,169 +54,124 @@ function snakeproof_kirki_config()
         'option_type' => 'theme_mod',
     ));
 
-    // --- Panel: General Settings ---
+    // Panel
     Kirki::add_panel('snakeproof_general', array(
         'priority' => 10,
         'title' => 'Landing Page Content',
-        'description' => 'Manage the content for the landing page sections.',
     ));
 
-    // --- Section: Hero ---
+    // Hero Section
     Kirki::add_section('hero_section', array(
         'title' => 'Hero Section',
         'panel' => 'snakeproof_general',
     ));
 
-    Kirki::add_field('snakeproof_config', [
-        'type' => 'text',
-        'settings' => 'hero_title_line1',
-        'label' => 'Hero Title Top',
-        'section' => 'hero_section',
-        'default' => 'Is your dogs',
-    ]);
+    $hero_fields = array(
+        'hero_title_line1' => array('text', 'Hero Title Top', 'Is your dogs'),
+        'hero_title_line2' => array('text', 'Hero Title Middle', 'life worth'),
+        'hero_title_highlight' => array('text', 'Hero Title Highlight', '135.00?'),
+        'hero_subtitle' => array('textarea', 'Hero Subtitle', "Don't let an outdoor adventure turn into a 2am tragedy."),
+        'hero_btn_text' => array('text', 'Button Text', 'Secure Your Slot 🐾'),
+        'hero_btn_link' => array('url', 'Button Link', 'https://calendly.com/olk9training/rattlesnake-avoidance-course-2026'),
+        'hero_video_id' => array('text', 'YouTube Video ID', 'tzA0RzvcJwU'),
+    );
 
-    Kirki::add_field('snakeproof_config', [
-        'type' => 'text',
-        'settings' => 'hero_title_line2',
-        'label' => 'Hero Title Middle',
-        'section' => 'hero_section',
-        'default' => 'life worth',
-    ]);
+    foreach ($hero_fields as $setting => $config) {
+        Kirki::add_field('snakeproof_config', array(
+            'type' => $config[0],
+            'settings' => $setting,
+            'label' => $config[1],
+            'section' => 'hero_section',
+            'default' => $config[2],
+        ));
+    }
 
-    Kirki::add_field('snakeproof_config', [
-        'type' => 'text',
-        'settings' => 'hero_title_highlight',
-        'label' => 'Hero Title Highlight (Orange)',
-        'section' => 'hero_section',
-        'default' => '135.00?',
-    ]);
-
-    Kirki::add_field('snakeproof_config', [
-        'type' => 'textarea',
-        'settings' => 'hero_subtitle',
-        'label' => 'Hero Subtitle',
-        'section' => 'hero_section',
-        'default' => "Don't let an outdoor adventure turn into a 2am tragedy. Protect them before it's too late.",
-    ]);
-
-    Kirki::add_field('snakeproof_config', [
-        'type' => 'text',
-        'settings' => 'hero_btn_text',
-        'label' => 'Button Text',
-        'section' => 'hero_section',
-        'default' => 'Secure Your Slot 🐾',
-    ]);
-
-    Kirki::add_field('snakeproof_config', [
-        'type' => 'url',
-        'settings' => 'hero_btn_link',
-        'label' => 'Button Link',
-        'section' => 'hero_section',
-        'default' => 'https://calendly.com/olk9training/rattlesnake-avoidance-course-2026',
-    ]);
-
-    Kirki::add_field('snakeproof_config', [
-        'type' => 'text',
-        'settings' => 'hero_video_id',
-        'label' => 'YouTube Video ID',
-        'section' => 'hero_section',
-        'default' => 'tzA0RzvcJwU',
-    ]);
-
-    // --- Section: Facts ---
+    // Facts Section
     Kirki::add_section('facts_section', array(
         'title' => 'Facts Section',
         'panel' => 'snakeproof_general',
     ));
 
-    Kirki::add_field('snakeproof_config', [
+    Kirki::add_field('snakeproof_config', array(
         'type' => 'text',
         'settings' => 'facts_stat_1_number',
         'label' => 'Stat 1 Number',
         'section' => 'facts_section',
         'default' => '~7,000–8,000 dogs',
-    ]);
+    ));
 
-    Kirki::add_field('snakeproof_config', [
+    Kirki::add_field('snakeproof_config', array(
         'type' => 'textarea',
         'settings' => 'facts_stat_1_text',
         'label' => 'Stat 1 Text',
         'section' => 'facts_section',
         'default' => 'are bitten by rattlesnakes in the U.S. every year',
-    ]);
+    ));
 
-    // --- Section: Vet Bill Reality ---
+    // Vet Section
     Kirki::add_section('vet_section', array(
         'title' => 'Vet Bill Reality',
         'panel' => 'snakeproof_general',
     ));
 
-    Kirki::add_field('snakeproof_config', [
+    Kirki::add_field('snakeproof_config', array(
         'type' => 'text',
         'settings' => 'vet_treatment_price',
-        'label' => 'Average Treatment Price',
+        'label' => 'Average Treatment',
         'section' => 'vet_section',
         'default' => '$3,000–$7,000',
-    ]);
+    ));
 
-    Kirki::add_field('snakeproof_config', [
+    Kirki::add_field('snakeproof_config', array(
         'type' => 'text',
         'settings' => 'vet_severe_price',
-        'label' => 'Severe Case Price',
+        'label' => 'Severe Cases',
         'section' => 'vet_section',
         'default' => '$10,000–$15,000+',
-    ]);
+    ));
 
-    // --- Section: CTA ---
+    // CTA Section
     Kirki::add_section('cta_section', array(
         'title' => 'CTA & Pricing',
         'panel' => 'snakeproof_general',
     ));
 
-    Kirki::add_field('snakeproof_config', [
-        'type' => 'text',
-        'settings' => 'cta_headline_start',
-        'label' => 'Headline Line 1',
-        'section' => 'cta_section',
-        'default' => 'The first 50 dogs get in at:',
-    ]);
-
-    Kirki::add_field('snakeproof_config', [
+    Kirki::add_field('snakeproof_config', array(
         'type' => 'text',
         'settings' => 'cta_price_main',
-        'label' => 'Main Price (Whole)',
+        'label' => 'Price',
         'section' => 'cta_section',
         'default' => '135',
-    ]);
+    ));
 
-    Kirki::add_field('snakeproof_config', [
-        'type' => 'text',
-        'settings' => 'cta_price_decimal',
-        'label' => 'Price Decimal',
-        'section' => 'cta_section',
-        'default' => '.00',
-    ]);
-
-    // --- Section: Contact ---
+    // Contact Section
     Kirki::add_section('contact_section', array(
         'title' => 'Contact Info',
         'panel' => 'snakeproof_general',
     ));
 
-    Kirki::add_field('snakeproof_config', [
+    Kirki::add_field('snakeproof_config', array(
         'type' => 'text',
         'settings' => 'contact_email',
-        'label' => 'Email Address',
+        'label' => 'Email',
         'section' => 'contact_section',
         'default' => 'info@snakeproofurpup.com',
-    ]);
+    ));
 
-    Kirki::add_field('snakeproof_config', [
+    Kirki::add_field('snakeproof_config', array(
         'type' => 'text',
         'settings' => 'contact_phone',
-        'label' => 'Phone Number',
+        'label' => 'Phone',
         'section' => 'contact_section',
         'default' => '+1-202-555-0137',
-    ]);
+    ));
 }
 add_action('init', 'snakeproof_kirki_config');
+
+/**
+ * Helper function to get theme mod with default
+ */
+function snakeproof_get($setting, $default = '')
+{
+    return get_theme_mod($setting, $default);
+}
