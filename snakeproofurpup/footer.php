@@ -23,17 +23,15 @@
             <div>
                 <h4 class="font-bold mb-6 uppercase tracking-widest text-orange-custom text-sm">Contact Us</h4>
                 <p class="text-gray-400 mb-2">
-                    <?php echo get_theme_mod('contact_email', 'info@snakeproofurpup.com'); ?>
+                    <?php echo esc_html(get_theme_mod('contact_email', 'info@snakeproofurpup.com')); ?>
                 </p>
                 <p class="text-gray-400">
-                    <?php echo get_theme_mod('contact_phone', '+1-202-555-0137'); ?>
+                    <?php echo esc_html(get_theme_mod('contact_phone', '+1-202-555-0137')); ?>
                 </p>
             </div>
         </div>
         <div class="border-t border-gray-800 pt-10 text-center text-gray-500 text-sm">
-            <p>&copy;
-                <?php echo date('Y'); ?> SnakeProofUrPup Aversion Training. All rights reserved.
-            </p>
+            <p>&copy; <?php echo date('Y'); ?> SnakeProofUrPup Aversion Training. All rights reserved.</p>
         </div>
     </div>
 </footer>
@@ -53,7 +51,6 @@
         animation: marquee 25s linear infinite;
     }
 
-    /* Scroll to Top Button */
     #scrollTopBtn {
         opacity: 0;
         visibility: hidden;
@@ -78,79 +75,67 @@
     </svg>
 </button>
 
+<?php wp_footer(); ?>
+
 <script>
+    // Initialize AOS AFTER wp_footer loads the library
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+    }
+
     // Show/Hide Scroll to Top Button
     const scrollBtn = document.getElementById('scrollTopBtn');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            scrollBtn.classList.add('show');
-        } else {
-            scrollBtn.classList.remove('show');
-        }
-    });
+    if (scrollBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+    }
 
     // Hide Loader on Window Load
     window.addEventListener('load', () => {
         const loader = document.getElementById('loader');
-        loader.classList.add('opacity-0', 'pointer-events-none');
-        setTimeout(() => {
-            loader.remove(); // Remove from DOM after fade out
-            document.body.classList.remove('overflow-hidden');
-            document.body.classList.add('overflow-x-hidden');
-        }, 500);
+        if (loader) {
+            loader.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                loader.remove();
+                document.body.classList.remove('overflow-hidden');
+                document.body.classList.add('overflow-x-hidden');
+            }, 500);
+        }
+
+        // Re-init AOS on load to be safe
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
     });
 
-
-    // Enhanced Lottie Fallback Handler with Debugging
+    // Lottie Fallback Handler
     const lottiePlayer = document.querySelector('lottie-player');
     const fallbackSpinner = document.getElementById('fallback-spinner');
 
-    // console.log('Lottie Debug - Player element:', lottiePlayer);
-    // console.log('Lottie Debug - Fallback element:', fallbackSpinner);
-
-    if (lottiePlayer) {
-        // Listen for Lottie load event
-        lottiePlayer.addEventListener('load', () => {
-            // console.log('Lottie animation loaded successfully!');
-        });
-
-        // Listen for Lottie error event
-        lottiePlayer.addEventListener('error', (e) => {
-            console.error('Lottie failed to load:', e);
-            // console.log('Showing fallback spinner...');
+    if (lottiePlayer && fallbackSpinner) {
+        lottiePlayer.addEventListener('error', () => {
             lottiePlayer.style.display = 'none';
             fallbackSpinner.style.display = 'block';
         });
 
-        // Timeout fallback - if Lottie doesn't load in 2 seconds, show fallback
         setTimeout(() => {
-            // Check if Lottie has actually loaded
             if (!lottiePlayer.getLottie || typeof lottiePlayer.getLottie !== 'function') {
-                // console.warn('Lottie player not initialized after 2s, showing fallback');
                 lottiePlayer.style.display = 'none';
                 fallbackSpinner.style.display = 'block';
-            } else {
-                // console.log('Lottie player initialized successfully');
             }
         }, 2000);
-    } else {
-        console.error('Lottie player element not found!');
-        if (fallbackSpinner) {
-            fallbackSpinner.style.display = 'block';
-        }
     }
 </script>
-<script>
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100,
-        easing: 'ease-out-cubic'
-    });
-</script>
-
-<?php wp_footer(); ?>
 </body>
 
 </html>
