@@ -116,7 +116,8 @@ $theme_uri = get_template_directory_uri();
                         data-aos-delay="100">
                         <span class="text-4xl mb-4 block">⚠️</span>
                         <h3 class="text-2xl font-bold mb-4 uppercase text-[#0F2C59]">
-                            <?php echo esc_html($facts_stat_1_number); ?></h3>
+                            <?php echo esc_html($facts_stat_1_number); ?>
+                        </h3>
                         <p class="text-lg opacity-80 text-gray-700"><?php echo esc_html($facts_stat_1_text); ?></p>
                     </div>
                     <div class="bento-card bg-orange-custom p-10 border-4 border-orange-custom shadow-xl text-white"
@@ -155,14 +156,13 @@ $theme_uri = get_template_directory_uri();
                 <h2
                     class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 lg:mb-8 uppercase text-[#0F2C59] text-center lg:text-left">
                     Vet Bill Reality</h2>
-                <div class="mb-8 rounded-3xl overflow-hidden shadow-xl border-4 border-gray-200" data-aos="zoom-in"
-                    data-aos-delay="200">
+                <div class="mb-8 rounded-3xl overflow-hidden shadow-xl border-4 border-gray-200">
                     <img src="<?php echo esc_url($theme_uri); ?>/assets/img/vet-bill/dog_snake_bite.png"
                         alt="Dog with rattlesnake bite" class="w-full h-full object-cover aspect-square">
                 </div>
                 <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-100 hover:border-orange-500 transition-all duration-300"
-                        data-aos="fade-right" data-aos-delay="300">
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-100 hover:border-orange-500 transition-all duration-300">
                         <div class="flex items-center gap-4">
                             <div
                                 class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -178,12 +178,13 @@ $theme_uri = get_template_directory_uri();
                                 <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Average Treatment
                                 </p>
                                 <p class="text-2xl font-bold text-[#0F2C59]">
-                                    <?php echo esc_html($vet_treatment_price); ?></p>
+                                    <?php echo esc_html($vet_treatment_price); ?>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-100 hover:border-red-500 transition-all duration-300"
-                        data-aos="fade-right" data-aos-delay="400">
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-lg border-2 border-gray-100 hover:border-red-500 transition-all duration-300">
                         <div class="flex items-center gap-4">
                             <div
                                 class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -200,23 +201,23 @@ $theme_uri = get_template_directory_uri();
                             </div>
                         </div>
                     </div>
-                    <div class="pt-4 px-2" data-aos="fade-up" data-aos-delay="500">
+                    <div class="pt-4 px-2">
                         <p class="text-sm text-gray-500 italic">*Antivenom alone: $400–$800 per vial (many dogs need
                             multiple)</p>
                     </div>
                 </div>
             </div>
             <div class="p-6 sm:p-8 lg:p-12 xl:p-16 bg-orange-custom text-white flex flex-col justify-between">
-                <div class="mb-8 rounded-3xl overflow-hidden shadow-xl border-4 border-white" data-aos="zoom-in"
-                    data-aos-delay="300">
+                <div class="mb-8 rounded-3xl overflow-hidden shadow-xl border-4 border-white">
                     <img src="<?php echo esc_url($theme_uri); ?>/assets/img/vet-bill/happy_healthy_dog.png"
                         alt="Happy healthy dog" class="w-full h-full object-cover aspect-square">
                 </div>
                 <div>
-                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 lg:mb-8 text-white uppercase tracking-tight text-center lg:text-left"
-                        data-aos="fade-left" data-aos-delay="400">The Hard Question</h3>
+                    <h3
+                        class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 lg:mb-8 text-white uppercase tracking-tight text-center lg:text-left">
+                        The Hard Question</h3>
                     <ul class="space-y-6 mb-10">
-                        <li class="flex gap-4 items-start" data-aos="fade-left" data-aos-delay="500">
+                        <li class="flex gap-4 items-start">
                             <div
                                 class="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                                 <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -352,7 +353,8 @@ $theme_uri = get_template_directory_uri();
                         class="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8 text-center sm:text-left">
                         <div class="w-full text-center">
                             <p class="text-[#0F2C59] text-sm lg:text-base font-bold mb-2 leading-tight mx-auto">
-                                <?php echo esc_html($cta_headline_start); ?></p>
+                                <?php echo esc_html($cta_headline_start); ?>
+                            </p>
                             <div class="flex items-baseline justify-center">
                                 <span
                                     class="text-[#0F2C59] text-6xl font-black tracking-tighter">$<?php echo esc_html($cta_price_main); ?></span>
