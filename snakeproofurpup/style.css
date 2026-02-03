@@ -4,14 +4,92 @@ Theme URI: https://snakeproofurpup.com
 Author: Antigravity
 Author URI: https://snakeproofurpup.com
 Description: A custom landing page theme for Snake Aversion Training, built with Tailwind CSS and Kirki Customizer.
-Version: 1.0.1
+Version: 1.0.2
 Text Domain: snakeproofurpup
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-/* Basic Reset & Tailwind base if needed locally, though we use CDN */
+/* Core Variables */
+:root {
+    --primary-yellow: #FFD233;
+    --primary-blue: #0F2C59;
+    --primary-orange: #FF5500;
+    --primary-white: #F8F9FA;
+    --dark: #0a0a0a;
+}
+
+/* Base Styles */
 body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary-blue);
+    color: var(--primary-white);
     -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+.font-display {
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* Custom Utilities */
+.text-navy {
+    color: var(--primary-blue);
+}
+
+.bg-navy {
+    background-color: var(--primary-blue);
+}
+
+.text-orange-custom {
+    color: var(--primary-orange);
+}
+
+.bg-orange-custom {
+    background-color: var(--primary-orange);
+}
+
+.bg-dark {
+    background-color: var(--dark);
+}
+
+/* Grid Pattern Background */
+.grid-pattern {
+    background-size: 40px 40px;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+/* Bento Card Style */
+.bento-card {
+    border-radius: 32px;
+    transition: transform 0.3s ease;
+}
+
+.bento-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Container Utility */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Loader Animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
