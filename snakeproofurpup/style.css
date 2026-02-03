@@ -1,0 +1,14 @@
+/*
+Theme Name: SnakeProofUrPup
+Theme URI: https://snakeproofurpup.com
+Author: Antigravity
+Author URI: https://snakeproofurpup.com
+Description: A custom landing page theme for Snake Aversion Training, built with Tailwind CSS and Kirki Customizer.
+Version: 1.0.0
+Text Domain: snakeproofurpup
+*/
+
+/* Basic Reset & Tailwind base if needed locally, though we use CDN */
+body {
+    -webkit-font-smoothing: antialiased;
+}
