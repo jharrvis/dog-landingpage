@@ -4,89 +4,11 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?php bloginfo('name'); ?> |
-        <?php bloginfo('description'); ?>
-    </title>
-
-    <style>
-        :root {
-            --primary-yellow: #FFD233;
-            /* Kept for minor accents if needed */
-            --primary-blue: #0F2C59;
-            /* Deep Navy Blue */
-            --primary-orange: #FF5500;
-            /* Vibrant Orange */
-            --primary-white: #F8F9FA;
-            --dark: #0a0a0a;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--primary-blue);
-            color: var(--primary-white);
-        }
-
-        .text-navy {
-            color: var(--primary-blue);
-        }
-
-        .bg-navy {
-            background-color: var(--primary-blue);
-        }
-
-        .text-orange-custom {
-            color: var(--primary-orange);
-        }
-
-        .bg-orange-custom {
-            background-color: var(--primary-orange);
-        }
-
-        h1,
-        h2,
-        h3,
-        .font-display {
-            font-family: 'Fredoka', sans-serif;
-        }
-
-        .grid-pattern {
-            background-size: 40px 40px;
-            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-        }
-
-        .arch-bg {
-            border-top-left-radius: 1000px;
-            border-top-right-radius: 1000px;
-        }
-
-        .pill-btn {
-            border-radius: 9999px;
-            transition: all 0.3s ease;
-        }
-
-        .bento-card {
-            border-radius: 32px;
-            transition: transform 0.3s ease;
-        }
-
-        .bento-card:hover {
-            transform: translateY(-5px);
-        }
-    </style>
-
-    <style>
-        html,
-        body {
-            overflow-x: hidden;
-            width: 100%;
-        }
-    </style>
-
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('overflow-hidden'); ?>>
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
 
     <!-- Loading Spinner Overlay -->
     <div id="loader"
@@ -117,7 +39,6 @@
         }
     </style>
 
-
     <!-- Navigation -->
     <nav
         class="py-4 px-4 sm:px-6 lg:px-10 flex justify-between items-center bg-[#0F2C59]/95 backdrop-blur-md fixed top-0 left-0 w-full z-50 border-b border-white/10 shadow-lg">
@@ -144,9 +65,9 @@
         </div>
 
         <!-- Desktop Register Button -->
-        <a href="<?php echo get_theme_mod('hero_btn_link', 'https://calendly.com/olk9training/rattlesnake-avoidance-course-2026'); ?>"
+        <a href="<?php echo esc_url(get_theme_mod('hero_btn_link', 'https://calendly.com/olk9training/rattlesnake-avoidance-course-2026')); ?>"
             class="hidden lg:inline-block bg-orange-custom border-2 border-orange-custom px-6 py-3 rounded-full font-bold text-white hover:bg-white hover:text-[#0F2C59] transition-all shadow-lg hover:shadow-none">
-            <?php echo get_theme_mod('hero_btn_text', 'Register Now'); ?>
+            <?php echo esc_html(get_theme_mod('hero_btn_text', 'Register Now')); ?>
         </a>
 
         <!-- Mobile Hamburger Button -->
@@ -184,22 +105,18 @@
             <!-- Menu Links -->
             <div class="flex flex-col p-6 gap-4">
                 <a href="#facts"
-                    class="mobile-menu-link text-white font-semibold text-lg py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
-                    Facts
-                </a>
+                    class="mobile-menu-link text-white font-semibold text-lg py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">Facts</a>
                 <a href="#reality"
-                    class="mobile-menu-link text-white font-semibold text-lg py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
-                    Vet Bill Reality
-                </a>
+                    class="mobile-menu-link text-white font-semibold text-lg py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">Vet
+                    Bill Reality</a>
                 <a href="#regret"
-                    class="mobile-menu-link text-white font-semibold text-lg py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
-                    Why Us
-                </a>
+                    class="mobile-menu-link text-white font-semibold text-lg py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">Why
+                    Us</a>
 
                 <!-- Mobile Register Button -->
-                <a href="<?php echo get_theme_mod('hero_btn_link', 'https://calendly.com/olk9training/rattlesnake-avoidance-course-2026'); ?>"
+                <a href="<?php echo esc_url(get_theme_mod('hero_btn_link', 'https://calendly.com/olk9training/rattlesnake-avoidance-course-2026')); ?>"
                     class="mt-4 bg-orange-custom text-center border-2 border-orange-custom px-6 py-4 rounded-full font-bold text-white hover:bg-white hover:text-[#0F2C59] transition-all shadow-lg">
-                    <?php echo get_theme_mod('hero_btn_text', 'Register Now'); ?>
+                    <?php echo esc_html(get_theme_mod('hero_btn_text', 'Register Now')); ?>
                 </a>
             </div>
         </div>
